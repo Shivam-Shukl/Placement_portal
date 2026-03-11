@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Create a Drive</title></head>
+<body style="padding: 20px; background-color: #F3F4F4;">
+    <h2>Create a Drive</h2>
+    <div style="background-color: #f8f9fa; padding: 20px; width: 400px; border: 1px solid #ccc;">
+        <form action="/create_drive" method="POST">
+            <label>Drive Name</label> <input type="text" name="drive_name" required><br><br>
+            <label>Job Title</label> <input type="text" name="job_title" required><br><br>
+            <label>Job Description</label><br>
+            <textarea name="description" rows="4" style="width: 100%;" required></textarea><br><br>
+            <label>Eligibility Criteria</label> <input type="text" name="eligibility_criteria" required><br><br>
+            <label>Salary (CTC)</label> <input type="text" name="salary" placeholder="e.g., 6 LPA" required><br><br>
+            <label>Application Deadline</label> <input type="date" name="application_deadline" required><br><br>
+            <div style="text-align: right;">
+                <button type="submit" style="color: green; border-radius: 5px;">Save</button>
+            </div>
+        </form>
+    </div>
+    <br><button><a style = "text-decoration: none;" href="/company"> Go Back</a></button>
+</body>
+</html>

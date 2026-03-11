@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Company Details</title></head>
+<body style="padding: 20px; background-color: #F3F4F4;">
+    <div style="display: flex; justify-content: space-between;">
+        <h2>{{ company_name }}</h2>
+        <div>
+            <a href="/student/history">History</a> | <a href="/logout">logout</a>
+        </div>
+    </div>
+    <hr>
+
+    <h3>Overview</h3>
+    <p>{{ company_data.overview if company_data.overview else "No overview provided by this company yet." }}</p>
+
+    <h3>Current Drives</h3>
+    <table border="1" cellpadding="5" width="60%">
+        {% for drive in drives %}
+        <tr>
+            <td>{{ drive.drive_name }}</td>
+            <td><a href="/student/drive/{{ drive.id }}"><button style="color: blue;">view details</button></a></td>
+        </tr>
+        {% else %}
+        <tr><td>No active drives available for this company.</td></tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/student"><button>Go Back</button></a>
+</body>
+</html>

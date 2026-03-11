@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Update Applications</title></head>
+<body style="padding: 20px; background-color: #F3F4F4">
+    <h2>Update Applications for the Drive</h2>
+    <p>Job Title: {{ drive.job_title }}</p>
+    
+    <h3>Received Applications</h3>
+    <table border="1" cellpadding="5" width="50%">
+        {% for app in applications %}
+        <tr>
+            <td>{{ app.student_username }}</td>
+            <td>
+                <a href="/review_application/{{ app.id }}"><button style="color: blue;">Review Application</button></a>
+            </td>
+        </tr>
+        {% else %}
+        <tr><td>No applications received yet.</td></tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/company"><button style="color: green;">Save / Go Back</button></a>
+</body>
+</html>

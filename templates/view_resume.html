@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ student.name }}'s Resume</title></head>
+<body style="padding: 40px; max-width: 800px; margin: auto; font-family: Arial, sans-serif;background-color: #F3F4F4">
+    
+    <div style="border: 1px solid #000; padding: 20px;">
+        <h1 style="text-align: center; margin-bottom: 5px;">{{ student.name or student.username }}</h1>
+        <p style="text-align: center; margin-top: 0;">
+            <b>Department:</b> {{ student.department }} | <b>CGPA:</b> {{ student.cgpa or 'N/A' }}
+        </p>
+        
+        
+        <hr>
+
+        <h3>Skills</h3>
+        <p>{{ student.skills or 'No skills listed.' }}</p>
+
+        <h3>Projects</h3>
+        <p style="white-space: pre-wrap;">{{ student.projects or 'No projects listed.' }}</p>
+
+        <h3>Achievements</h3>
+        <p style="white-space: pre-wrap;">{{ student.achievements or 'No achievements listed.' }}</p>
+    </div>
+
+    <br>
+    <div style="text-align: center;">
+        <button onclick="window.close()">Close Resume</button>
+    </div>
+</body>
+</html>

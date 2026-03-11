@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin - Student Application</title></head>
+<body style="padding: 20px; background-color: #F3F4F4;">
+    <h2>Student Application</h2>
+    
+    <p><b>Student Name:</b> {{ data.student_name }}</p>
+    <p><b>Department:</b> {{ data.department }}</p>
+    
+    <p><b>Drive:</b> {{ data.drive_name }}</p>
+    <p><b>Job Title:</b> {{ data.job_title }}</p>
+    <p><b>Current Status:</b> {{ data.status }}</p>
+    
+    <div style="margin-top: 20px;">
+        <a style = "text-decoration: none;" href="/view_resume/{{ data.student_name }}" target="_blank">
+            <button style="color: blue;">View view_resume </button>
+        </a>
+        <button onclick="history.back()" style="margin-left: 10px;">Back</button>
+    </div>
+</body>
+</html>

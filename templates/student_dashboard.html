@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Dashboard</title></head>
+<body style="padding: 20px; background-color: #F3F4F4">
+    <div style="display: flex; justify-content: space-between; background-color: #853953; color: white; padding: 10px;">
+        <h2>Welcome : {{ username }}</h2>
+        <div>
+            <button><a style = "color : black ; text-decoration: none;" href="/student/edit_profile">Edit profile</a></button> | 
+            <button><a style = "color : black ; text-decoration: none;" href="/student/history">History</a></button> | 
+            <button><a style = "color : black ; text-decoration: none;" href="/logout">logout</a></button>
+        </div>
+    </div>
+    <hr>
+
+    <h3>Organizations</h3>
+    <table border="1" cellpadding="5" width="60%">
+        {% for company in companies %}
+        <tr>
+            <td>{{ company.username }}</td>
+            <td><a href="/student/company/{{ company.username }}"><button style="color: blue;">view details</button></a></td>
+        </tr>
+        {% else %}
+        <tr><td>No approved organizations available yet.</td></tr>
+        {% endfor %}
+    </table>
+
+    <h3>Applied Drives</h3>
+<table border="1" cellpadding="5" width="60%">
+    <tr><th>Sr No.</th><th>Drive Name</th><th>Company</th><th>Deadline</th><th>Action</th></tr>
+    
+    {% for app in applied_drives %}
+    <tr>
+        <td>{{ loop.index }}</td> <td>{{ app.drive_name }}</td>
+        <td>{{ app.company_username }}</td>
+        <td>{{ app.application_deadline }}</td>
+        <td>
+            <a href="/student/drive/{{ app.id }}">
+                <button style="color: blue; cursor: pointer;">view details</button>
+            </a>
+        </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="5">You have not applied to any drives yet.</td></tr>
+    {% endfor %}
+</table>
+</body>
+</html>

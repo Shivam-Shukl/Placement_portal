@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin - Drive Details</title></head>
+<body style="padding: 20px; background-color: #F3F4F4;">
+    <h2>{{ drive.drive_name }}</h2>
+    
+    <p><b>Company:</b> {{ drive.company_username }}</p>
+    <p><b>Job Title:</b> {{ drive.job_title }}</p>
+    <p><b>Job Description:</b><br> {{ drive.description }}</p>
+    <p><b>Eligibility Criteria:</b><br> {{ drive.eligibility_criteria }}</p>
+    <p><b>Deadline:</b> {{ drive.application_deadline }}</p>
+
+    <div style="margin-top: 20px;">
+        <button onclick="history.back()">Go Back</button>
+    </div>
+</body>
+</html>

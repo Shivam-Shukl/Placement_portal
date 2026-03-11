@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Application History</title></head>
+<body style="padding: 20px; background-color: #F3F4F4">
+    
+
+    <h2>Student Application History</h2>
+    <p><b>Student Name:</b> {{ username }}</p>
+    <p><b>Department:</b> {{ department }}</p>
+    <br>
+
+    <table border="1" cellpadding="5" width="80%">
+        <tr><th>Drive No.</th><th>Interview</th><th>Job Title</th><th>Results</th><th>Remark</th></tr>
+        {% for item in history %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>In-person</td> <td>{{ item.job_title }}</td>
+            <td>
+                {% if item.status == 'Shortlisted' %} <span style="color: green;">Short Listed</span>
+                {% elif item.status == 'Rejected' %} <span style="color: red;">Rejected</span>
+                {% else %} {{ item.status }} {% endif %}
+            </td>
+            <td>None</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="5">No application history.</td></tr>
+        {% endfor %}
+    </table>
+    <br>
+    <div style="text-align: left;">
+        <a href="/student"><button style="color: blue;">back</button></a>
+    </div>
+</body>
+</html>

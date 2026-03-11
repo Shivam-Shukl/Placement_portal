@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Drive Details</title></head>
+<body style="padding: 20px; background-color: #F3F4F4">
+    <h2>{{ drive.drive_name }}</h2>
+    
+    <p><b>Job Title:</b><br> {{ drive.job_title }}</p>
+    
+    <p><b>Job Description:</b><br> {{ drive.description }}</p>
+    
+    <p><b>Eligibility Criteria:</b><br> {{ drive.eligibility_criteria }}</p>
+
+    <p><b>Salary (CTC):</b><br>{{ drive.salary }}</p>
+
+    <p><b>Deadline:</b><br> {{ drive.application_deadline }}</p>
+
+    <div style="margin-top: 20px;">
+        {% if has_applied %}
+            <button disabled style="background-color: #ccc;">Already Applied</button>
+        {% else %}
+            <a href="/student/apply/{{ drive.id }}"><button style="color: blue;">Apply</button></a>
+        {% endif %}
+        <button onclick="history.back()">Go Back</button>
+    </div>
+</body>
+</html>

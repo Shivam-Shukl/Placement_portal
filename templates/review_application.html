@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Application</title>
+</head>
+
+<body style="padding:20px; background-color: #F3F4F4">
+
+    <h2>Student Application</h2>
+
+    <p><b>Student Name:</b> {{ data.student_name }}</p>
+    <p><b>Department:</b> {{ data.department }}</p>
+
+    
+
+    <p><b>Drive:</b> {{ data.drive_name }}</p>
+    <p><b>Job Title:</b> {{ data.job_title }}</p>
+
+    <div style="margin-top:20px;">
+
+        <a style = "text-decoration: none;" href="/view_resume/{{ data.student_name }}" target="_blank">
+            <button style="color:blue;">View Resume</button>
+        </a>
+
+        <form action="/review_application/{{ data.app_id }}" method="POST" style="display:inline-block; margin-left:10px;">
+            <select name="status" onchange="this.form.submit()">
+                <option value="Applied" {% if data.status == "Applied" %}selected{% endif %}>Applied</option>
+                <option value="Shortlisted" {% if data.status == "Shortlisted" %}selected{% endif %}>Shortlist</option>
+                <option value="Waiting" {% if data.status == "Waiting" %}selected{% endif %}>Waiting</option>
+                <option value="Rejected" {% if data.status == "Rejected" %}selected{% endif %}>Reject</option>
+            </select>
+        </form>
+
+    </div>
+
+    <br><br>
+
+    <a href="/drive_details/{{ data.drive_id }}">
+        <button style="color:blue;">Back</button>
+    </a>
+
+</body>
+</html>

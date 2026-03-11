@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<html>
+<head><title>Edit Profile</title></head>
+<body style="padding: 20px; background-color: #F3F4F4; ">
+    <h2>Edit Profile</h2>
+    <form action="/student/edit_profile" method="POST">
+        <h3>Basic Information</h3>
+        <label>Full Name:</label> <input type="text" name="name" value="{{ user.name or '' }}" required><br><br>
+        <label>Department:</label> <input type="text" name="department" value="{{ user.department or '' }}" readonly style="background-color: #eee;"><br><br>
+        <label>CGPA:</label> <input type="text" name="cgpa" value="{{ user.cgpa or '' }}" required><br><br>
+
+        <h3>Resume Information</h3>
+        <label>Skills (comma separated):</label><br>
+        <textarea name="skills" rows="2" cols="50">{{ user.skills or '' }}</textarea><br><br>
+        <label>Projects:</label><br>
+        <textarea name="projects" rows="3" cols="50">{{ user.projects or '' }}</textarea><br><br>
+        <label>Achievements:</label><br>
+        <textarea name="achievements" rows="3" cols="50">{{ user.achievements or '' }}</textarea><br><br>
+
+        
+
+        <button type="submit" style="color: green;">Save Profile</button>
+        <button><a href="/student" style="margin-left: 10px; text-decoration : none">Cancel</a></button>
+    </form>
+</body>
+</html> 
+
+
+
